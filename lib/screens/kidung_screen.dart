@@ -63,7 +63,7 @@ class _KidungScreenState extends State<KidungScreen> {
             icon: const Icon(Icons.arrow_back),
           ),
           title: Text(
-            'Lagu Pujian',
+            'Kidung Pujian',
             style: GoogleFonts.lato(
               fontSize: 20,
               fontWeight: FontWeight.bold,

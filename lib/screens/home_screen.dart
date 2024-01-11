@@ -64,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 GridItem(
                   screen: KidungScreen(),
                   icon: Icons.book,
-                  text: 'Kidung - Kidung'),
+                  text: 'Kidung Pujian'),
               ],
             ),
           ),
