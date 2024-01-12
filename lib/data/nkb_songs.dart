@@ -519,14 +519,15 @@ List<Song> nKBSongs = [
           "Ya Tuhanku, ya Tuhanku, kasihani daku,\n"
           "Ya Tuhanku, ya Tuhanku, kasihani daku."),
   const Song(
-      judul: "NKB 30a",
-      lagu: "1. Hormat bagi Sang Bapa,\n"
+      judul: "NKB 30 - Hormat Bagi Sang Bapa",
+      lagu: "NKB 30a\n"
+          "1. Hormat bagi Sang Bapa,\n"
           "dan bagi AnakNya dan Roh Kudus,\n"
           "Yang sejak mulanya ada,\n"
           "sekarang dan s'lamanya,\n"
           "akan tetap.\n"
           "Amin, amin.\n\n"
-          "NKB 30b\n\n"
+          "NKB 30b\n"
           "1. Hormat bagi Sang Bapa,\n"
           "dan bagi AnakNya dan Roh Kudus,\n"
           "Yang sejak mulanya ada,\n"
@@ -545,7 +546,8 @@ List<Song> nKBSongs = [
           "membuat hidup berseri."),
   const Song(
       judul: "NKB 32 - Atas Bumi Nan Permai",
-      lagu: "1. Atas bumi nan permai, atas langit nan cerah,\n"
+      lagu: "NKB 32a\n"
+          "1. Atas bumi nan permai, atas langit nan cerah,\n"
           "atas kasih tersemai dalam hidup semesta:\n"
           "Kristus, kami naikkanlah syukur, puji dan sembah.\n\n"
           "2. Atas tiap kurnia pada pagi dan petang,\n"
@@ -556,10 +558,9 @@ List<Song> nKBSongs = [
           "Kristus, kami naikkanlah syukur, puji dan sembah.\n\n"
           "4. Atas g'reja yang betah dalam doa dan kerja,\n"
           "atas korban baktinya bagi Raja semesta:\n"
-          "Kristus, kami naikkanlah syukur, puji dan sembah."),
-  const Song(
-      judul: "NKB 32b",
-      lagu: "1. Atas bumi nan permai, atas langit nan cerah,\n"
+          "Kristus, kami naikkanlah syukur, puji dan sembah.\n\n"
+          "NKB 32b\n"
+          "1. Atas bumi nan permai, atas langit nan cerah,\n"
           "atas kasih tersemai dalam hidup semesta:\n\n"
           "Reff:\n"
           "Kristus, kami naikkanlah syukur bagiMu dalam puji dan sembah.\n\n"
