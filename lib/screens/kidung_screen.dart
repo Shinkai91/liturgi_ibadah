@@ -87,7 +87,7 @@ class _KidungScreenState extends State<KidungScreen> {
                       _currentSongList = pKJSongs;
                       break;
                     case 'NKB':
-                      _currentSongList = nKbSongs;
+                      _currentSongList = nKBSongs;
                       break;
                   }
                   currentIndex = 0;
