@@ -1,30 +1,106 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:pdfx/pdfx.dart';
 
-class PDFViewerPage extends StatelessWidget {
-  const PDFViewerPage ({super.key});
-  final String pdfPath = 'assets/documents/sample1.pdf';
+class LiturgiScreen extends StatefulWidget {
+  const LiturgiScreen({super.key});
+
+  @override
+  State<LiturgiScreen> createState() => _PDFViewerPageState();
+}
+
+class _PDFViewerPageState extends State<LiturgiScreen> {
+  late PdfControllerPinch pdfControllerPinch;
+
+  int totalPagesCount = 0;
+  int currentPages = 1;
+
+  @override
+  void initState() {
+    super.initState();
+    pdfControllerPinch = PdfControllerPinch(
+      document: PdfDocument.openAsset('assets/documents/tata_ibadah.pdf'),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('PDF Viewer'),
+        title: const Text(
+          "Liturgi Ibadah",
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blueGrey,
       ),
-      body: PDFView(
-        filePath: pdfPath,
-        enableSwipe: true, // Enable swipe gestures
-        swipeHorizontal: true, // Swipe horizontally
-        autoSpacing: false, // Adjust spacing between pages automatically
-        pageFling: false, // Enable fling animation
-        onPageChanged: (int? page, int? total) {  // Updated type to int?
-          if (page != null && total != null) {  // Ensure values are not null
-            if (kDebugMode) {
-              print('Page $page/$total');
-            }
+      body: Container(
+        color: Colors.white,
+        child: _buildUI(),
+      ),
+    );
+  }
+
+  Widget _buildUI() {
+    return Column(
+      children: [
+        Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            IconButton(
+              onPressed: () {
+                pdfControllerPinch.previousPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.linear);
+              },
+              icon: const Icon(Icons.arrow_back),
+            ),
+            Text('$currentPages/$totalPagesCount'),
+            IconButton(
+              onPressed: () {
+                pdfControllerPinch.nextPage(
+                    duration: const Duration(milliseconds: 500),
+                    curve: Curves.linear);
+              },
+              icon: const Icon(Icons.arrow_forward),
+            ),
+          ],
+        ),
+        _pdfView(),
+      ],
+    );
+  }
+
+  Widget _pdfView() {
+    return Expanded(
+      child: GestureDetector(
+        onHorizontalDragEnd: (details) {
+          if (details.primaryVelocity! > 0) {
+            pdfControllerPinch.previousPage(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.linear,
+            );
+          } else if (details.primaryVelocity! < 0) {
+            pdfControllerPinch.nextPage(
+              duration: const Duration(milliseconds: 200),
+              curve: Curves.linear,
+            );
           }
         },
+        child: PdfViewPinch(
+          scrollDirection: Axis.horizontal, // Menggunakan scroll horizontal
+          controller: pdfControllerPinch,
+          onDocumentLoaded: (document) {
+            setState(() {
+              totalPagesCount = document.pagesCount;
+            });
+          },
+          onPageChanged: (page) {
+            setState(() {
+              currentPages = page;
+            });
+          },
+        ),
       ),
     );
   }

@@ -57,7 +57,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Lagu Pujian',
                 ),
                 GridItem(
-                  screen: PDFViewerPage(),
+                  screen: LiturgiScreen(),
                   icon: Icons.church,
                   text: 'Tata Ibadah',
                 ),

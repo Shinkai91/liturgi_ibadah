@@ -15,7 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-    
+
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.of(context).pushReplacement(
         CupertinoPageRoute(builder: (ctx) => const App()),
@@ -26,14 +26,15 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor:
+          Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Spacer(flex: 2),
           Image(
-            image: AssetImage('assets/images/quiz-logo.png'),
+            image: AssetImage('assets/images/logo.png'),
             width: 200,
-            color: Color.fromARGB(255, 0, 0, 0),
           ),
           Spacer(flex: 2),
           Align(
