@@ -88,7 +88,7 @@ class _PDFViewerPageState extends State<LiturgiScreen> {
           }
         },
         child: PdfViewPinch(
-          scrollDirection: Axis.horizontal, // Menggunakan scroll horizontal
+          scrollDirection: Axis.horizontal,
           controller: pdfControllerPinch,
           onDocumentLoaded: (document) {
             setState(() {
@@ -97,7 +97,8 @@ class _PDFViewerPageState extends State<LiturgiScreen> {
           },
           onPageChanged: (page) {
             setState(() {
-              currentPages = page;
+              currentPages =
+                  page;
             });
           },
         ),

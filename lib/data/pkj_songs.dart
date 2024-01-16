@@ -1936,6 +1936,15 @@ List<Song> pKJSongs = [
           "Dialah Rajamu kuasaNya penuh\n"
           "yang memelihara s'luruh hidupmu."),
   const Song(
+      judul: "PKJ 123 - Dengan Yesus Di Dalam P'rahu",
+      lagu: "1.  Dengan Yesus di dalam p'rahu\n"
+          "aku tenang, aku tenang, aku tenang.\n"
+          "Dengan Yesus di dalam p'rahu\n"
+          "aku tenang di badai yang seram.\n"
+          "Pulang berlabuh, pulang berlabuh,\n"
+          "dengan Yesus di dalam p'rahu\n"
+          "aku senang berlabuh dan menang."),
+  const Song(
       judul: "PKJ 124 - Di Saat Ini Kau Perlu Tuhan",
       lagu: "1.  Di saat ini kau perlu Tuhan,\n"
           "di saat ini kau perlu jangkar.\n"

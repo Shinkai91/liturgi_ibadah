@@ -27,7 +27,12 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Liturgi Ibadah'),
+        title: const Text(
+          'Liturgi Ibadah',
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -62,9 +67,9 @@ class _HomeScreenState extends State<HomeScreen> {
                   text: 'Tata Ibadah',
                 ),
                 GridItem(
-                  screen: KidungScreen(),
-                  icon: Icons.book,
-                  text: 'Kidung Pujian'),
+                    screen: KidungScreen(),
+                    icon: Icons.book,
+                    text: 'Kidung Pujian'),
               ],
             ),
           ),
